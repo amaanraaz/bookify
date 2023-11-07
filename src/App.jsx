@@ -5,15 +5,23 @@ import { useState } from 'react'
 //pages
 import Register from './Pages/Register'
 import Login from './Pages/Login'
+import { Navbar } from 'react-bootstrap'
+import MyNavbar from './components/MyNavbar'
+import List from './Pages/List'
+import Homepage from './components/Homepage'
 
 function App() {
 
   return (
-    <Routes>
-      <Route path='/' element={<h1>home</h1>} />
-      <Route path='/register' element={<Register/>} />
-      <Route path='/login' element={<Login/>} />
-    </Routes>
+    <div>
+      <MyNavbar />
+      <Routes>
+        <Route path='/' element={<Homepage/>} />
+        <Route path='/register' element={<Register/>} />
+        <Route path='/login' element={<Login/>} />
+        <Route path='/book/list' element={<List />} />
+      </Routes>
+    </div>
   )
 }
 
